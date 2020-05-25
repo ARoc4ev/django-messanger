@@ -1,0 +1,120 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block header %}
+    <a class="nav-link" href="/u/{{ team_id }}/">
+        <div class="">
+            <div class="" style="float: left">
+                <img style="width: 25px" src="{% static 'assets/im/sp.png' %}">
+            </div>
+            <div style="float: left"><p class="cms">Треды</p></div>
+        </div>
+    </a>
+    <a class="nav-link" href="/im/">
+        <div class="">
+            <div class="" style="float: left">
+                <img style="width: 25px" src="{% static 'assets/im/em.png' %}">
+            </div>
+            <div style="float: left"><p class="cms">Сообщения</p></div>
+        </div>
+    </a>
+    <a class="nav-link" href="/team/">
+        <div class="">
+            <div class="" style="float: left">
+                <img style="width: 25px" src="{% static 'assets/im/pi.png' %}">
+            </div>
+            <div style="float: left"><p class="cms">Команда</p></div>
+        </div>
+    </a>
+
+
+    <a class="nav-link left" href="/logout/" style="margin-left: auto"><img style="width: 25px"
+                                                                     src="{% static 'assets/im/logout.png' %}"></a>
+    <a class="nav-link left" href="#"><p class="cms">{{ name }}</p></a>
+{% endblock %}
+
+
+{% block main %}
+    <link rel="stylesheet" href={% static "assets/css/im.css" %}/>
+
+    <div class="center_wraper" style="">
+        <div class="name_k" style="">
+            <div class="pade-blok">
+                <div class="name_ka "><p style="margin-bottom: 0; font-size: 20px">
+                    Диалоги</p></div>
+            </div>
+            <div class="fon">
+                <div class="pade-blok" style="">
+                    <div iddiv="box_2" id="teams_s" class="new_tred mymagicoverbox">
+                        <div style="margin-left: 24px; float: left"><p style="margin-bottom: 0;font-size: 16px;">Начать
+                            новый диалог</p>
+                        </div>
+                        {#                        <div style="float: left; padding-left: 120px">#}
+                        {#                            <img class="" style="width: 20px" src="{% static 'assets/im/ed.png' %}">#}
+                        {##}
+                        {#                        </div>#}
+
+                    </div>
+                </div>
+            </div>
+            <div id='threadim'>
+                {% for i in traid %}
+                    <a href="/im/{{ i.id }}/" style="color: black">
+                        <div class="traid">
+                            <div class="traid_text">
+                                <div class="test44"><p style="margin-bottom: 0">{{ i.name }}</p>
+                                    <p class="size"
+                                       style="margin: 0; font-size: 12px ; color: rgba(25,25,26,0.6)">Алексей
+                                        Рочев: {{ i.text }} </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </a>
+
+
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div id="box_2" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">
+            <div class="page_block_header"><p class="cms">Личные сообщения</p></div>
+            <div align="center">
+                <div style=" ">
+                    <div style="display: flex; padding: 20px;">
+                        <div style="padding-left: 30px;"><p class="cms" style="margin-bottom: 0"></p>
+                        </div>
+                        <div style="padding-left:10px "><input id="search"
+                                                               placeholder="Поиск члена команды"></input>
+                        </div>
+                        <div style="margin-left: 10px">
+                            <button id='im' onclick="" class="btn btn-primary">Создать
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <form id="myForm">
+
+                    <div id="teams" class="teams">
+
+
+                    </div>
+                </form>
+            </div>
+            <div style="margin-top: 10px"></div>
+
+        </div>
+        <script src="{% static "assets/js/team.js" %}"></script>
+            <script src="{% static "assets/js/chat2.js" %}"></script>
+
+
+        {% block chat %}{% endblock %}
+    </div>
+
+
+
+{% endblock %}
+

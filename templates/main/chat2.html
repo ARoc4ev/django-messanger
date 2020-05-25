@@ -1,0 +1,36 @@
+{% extends "main/im.html" %}
+{% load static %}
+
+{% block chat %}
+    <div style=" width: 100%">
+        <div class="heder_chat">
+            <div class="name_channel"><p class="cms" style="font-size:20px ">{{ name_traid }}</p></div>
+        </div>
+        <div class="dialog">
+            {% for i in sms %}
+                <div class="sms"><p class="cms" style="margin-bottom: 0; "> {{ i.name }} {{ i.datetime }}</p>
+                    <p style="margin-bottom: 0; padding-left: 10px; font-size: .875rem;width: 450px;font-family: 'Noto Sans';">{{ i.text }}</p>
+
+                </div>
+            {% endfor %}
+        </div>
+        <div class="chat-input">
+            <div class="container" style="display: flex">
+                <div id="text" class="chat-imput-text" tabindex="0" aria-multiline="true" role="textbox"
+                     contenteditable="true"></div>
+                <button id='input1' type="button" class="btn btn-light input " accesskey="1"><img style="width: 20px"
+                                                                                                  src="{% static 'assets/im/ic-send_97591.png' %}">
+                </button>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <script src="{% static "assets/js/chat2.js" %}"></script>
+    <script>$(document).ready(function () {
+        activate_chat({{ team_id }}, {{ thread_id }})
+    });</script>
+
+{% endblock %}

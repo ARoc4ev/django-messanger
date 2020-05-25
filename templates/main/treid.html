@@ -1,0 +1,72 @@
+{% extends "main/main.html" %}
+{% load static %}
+
+{% block trid %}
+
+    <div class="left_tred">
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class="boxx" href="">
+            <div class="" style="float: right">
+                <img class="test" style="width: 20px" src="{% static 'assets/im/pl.png' %}">
+            </div>
+            <div style=""><p class="m_b">Каналы</p></div>
+
+        </a>
+        {% for i in channel %}
+            <div id= {{ i.id }}>
+                <a href="/u/1/{{ i.id }}/" class="boxx"><p class="m_b  size">{{ i.name }}</p></a>
+            </div>
+        {% endfor %}
+        <a class="boxx"></a>
+
+
+    </div>
+    <div class="center_wraper" style="">
+        <div class="name_k" style="float: left">
+            <div class="pade-blok">
+                <div class="name_ka"><p style="margin-bottom: 0">{{ name_channel }}</p></div>
+            </div>
+            <div class="fon">
+                <div class="pade-blok" style="">
+                    <div class="new_tred">
+                        <div style="margin-left: 24px; float: left"><p style="margin-bottom: 0;">Начать новый
+                            тред </p>
+                        </div>
+                        <div style="float: left; padding-left: 190px">
+                            <img class="" style="width: 20px" src="{% static 'assets/im/ed.png' %}">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% for i in traid %}
+                <a href="/u/1/{{ i.id_channel }}/{{ i.id }}/" style="color: black">
+                    <div class="traid">
+                        <div class="traid_text">
+                            <div class="test44"><p style="margin-bottom: 0">{{ i.name }}</p>
+                                <p class="size"
+                                   style="margin: 0; font-size: 12px ; color: rgba(25,25,26,0.6)">{{ i.partner }}: {{ i.text }} </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </a>
+
+
+
+            {% endfor %}
+
+        </div>
+        {% block chat %}{% endblock %}
+    </div>
+
+
+
+{% endblock %}
+
+

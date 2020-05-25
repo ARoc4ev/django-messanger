@@ -1,0 +1,79 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block main %}
+
+    <div class="container-xl">
+        <div class="text-center" style="margin-top:50px "><p style="font-family: Circe Rounded;font-size: 25px;"> Создайте свою  команду или присоединиться к сущуствующей</p></div>
+        <div style="display: flex; margin-top: 110px; min-width: 450px">
+
+            <div  iddiv="box_1" class="block-mini mymagicoverbox" style="margin-left: auto; margin-right: 10px">
+
+
+                <p class="text-center" style=" margin-top: 40px;">Создать </p>
+                <img style="width: 150px; margin-top: 40px; margin-left: 25px" src="{% static 'assets/im/newtm.png' %}">
+
+            </div>
+            <div    iddiv="box_2" class="block-mini mymagicoverbox" style=" margin-right: auto; margin-left: 10px">
+                <p class="text-center" style="margin-top: 40px;"> Присоединиться</p>
+                <img style="width: 150px; margin-top: 40px; margin-left: 25px"
+                     src="{% static 'assets/im/tm.png' %}">
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+     <div id="box_1" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">
+        <div class="page_block_header"><p class="cms">Создать</p></div>
+        <div align="center">
+            <div style=" ">
+                <form method="post"  action="{% url  'newteam'%}">
+                    {% csrf_token %}
+
+                    <div><p class="cms" style="margin-bottom: 0">Название команды</p></div>
+                    <div><input  name="name"></div>
+
+                    <div style="margin: 20px">
+                        <button class="btn btn-primary">Создать</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="box_2" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">
+        <div class="page_block_header"><p class="cms">Присоеденится</p></div>
+        <div align="center">
+            <div style=" ">
+                <form method="post">
+                    {% csrf_token %}
+                    <div style="display: flex; padding: 20px;">
+                        <div style="padding-left: 30px;"><p class="cms" style="margin-bottom: 0">id  команды</p></div>
+                        <div style="padding-left:10px "><input  id='efer' name="id"></div>
+
+                    </div>
+
+                    <div id="dwedf"> </div>
+
+                    <div style="margin: 20px">
+                        <button class="btn btn-primary">Присоеденится</button>
+                    </div>
+                </form>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+{% endblock %}

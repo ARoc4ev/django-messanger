@@ -1,0 +1,153 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block header %}
+    <a class="nav-link" href="/u/{{ team_id }}/">
+        <div class="">
+            <div class="" style="float: left">
+                <img style="width: 25px" src="{% static 'assets/im/sp.png' %}">
+            </div>
+            <div style="float: left"><p class="cms">Треды</p></div>
+        </div>
+    </a>
+    <a class="nav-link" href="/im/">
+        <div class="">
+            <div class="" style="float: left">
+                <img style="width: 25px" src="{% static 'assets/im/em.png' %}">
+            </div>
+            <div style="float: left"><p class="cms">Сообщения</p></div>
+        </div>
+    </a>
+    <a class="nav-link" href="#">
+        <div class="">
+            <div class="" style="float: left">
+                <img style="width: 25px" src="{% static 'assets/im/pi.png' %}">
+            </div>
+            <div style="float: left"><p class="cms">Команда</p></div>
+        </div>
+    </a>
+
+
+    <a class="nav-link left" href="/logout/" style="margin-left: auto"><img style="width: 25px"
+                                                                     src="{% static 'assets/im/logout.png' %}"></a>
+    <a class="nav-link left" href="#"><p class="cms">{{ name }}</p></a>
+{% endblock %}
+
+
+{% block main %}
+    <div class="left_tred">
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class="boxx" href="">
+{#            <div class="" style="float: right">#}
+{#                <img class="test" style="width: 20px" src="{% static 'assets/im/pl.png' %}">#}
+{#            </div>#}
+            <div iddiv="box_1" class="mymagicoverbox" style=""><p class="m_b">Группы</p></div>
+
+        </a>
+        {% for i in channel %}
+{#            <div id= {{ i.id }}>#}
+{#                <a href="/u/1/{{ i.id }}/" class="boxx"><p class="m_b  size">{{ i.name }}</p></a>#}
+{#            </div>#}
+        {% endfor %}
+
+        <div id="channel_res"></div>
+        <a class="boxx"></a>
+
+
+    </div>
+    <div class="center_wraper" style="">
+        <div class="name_k" style="">
+            <div class="pade-blok">
+                <div class="name_ka"><p style="margin-bottom: 0">{{ team_name}}</p></div>
+                <div class="part"> <p style="margin-top: 0">количестов  учатников {{ len_team }} </p></div>
+            </div>
+            <div class="fon">
+                <div class="pade-blok" style="">
+                    <div iddiv="box_2" class=" new_tred mymagicoverbox">
+                        <div style="margin-left: 24px; float: left"><p style="margin-bottom: 0;">Пригласить людей </p>
+                            <input  id="channel_id" type="hidden" value="{{channel_id}}">
+                        </div>
+                        {#                            <div style="float: left; padding-left: 190px">#}
+                        {#                                <img class="" style="width: 20px" src="{% static 'assets/im/ed.png' %}">#}
+                        {##}
+                        {#                            </div>#}
+
+                    </div>
+                </div>
+            </div>
+            {% for i in participants %}
+                <a href="/team/{{ i.id }}/" style="color: black">
+                    <div class="traid">
+                        <div class="traid_text">
+                            <div class="test44"><p style="margin-bottom: 0">{{ i.name }}</p>
+                                <p class="size"
+                                   style="margin: 0; font-size: 12px ; color: rgba(25,25,26,0.6)">{{ i.email }} </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </a>
+
+
+
+            {% endfor %}
+
+        <div id="restread"></div>
+
+        </div>
+        {% block chat %}{% endblock %}
+    </div>
+
+{#    <div id="box_1" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">#}
+{#        <div class="page_block_header"><p class="cms">Создать новый канал</p></div>#}
+{#        <div align="center">#}
+{#            <div style=" ">#}
+{#                <form method="post" id="ajax_form" action="">#}
+{##}
+{#                    <div><p class="cms" style="margin-bottom: 0">Название канала</p></div>#}
+{#                    <div><input id="newchanel"></input></div>#}
+{##}
+{#                    <div style="margin: 20px">#}
+{#                        <button id='btn' class="btn btn-primary">Создать</button>#}
+{#                    </div>#}
+{#                </form>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+
+
+    <div id="box_2" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">
+        <div class="page_block_header"><p class="cms"> Приглашение  </p></div>
+        <div align="center">
+            <div style=" ">
+                    {% csrf_token %}
+                    <div style="display: flex; padding: 20px;">
+                        <div style="padding-left: 50px;"><p class="cms" style="margin-bottom: 0">email</p></div>
+                        <div style="padding-left:10px "><input  id="in" name="email" required="" ></div>
+
+                    </div>
+                    <div id="dwedf"></div>
+
+
+                    <div style="margin: 20px">
+                        <button  id="inv" class="btn btn-primary">Пригласить</button>
+                    </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <script src="{%  static 'assets/js/teamin.js' %}"></script>
+
+
+
+
+
+
+{% endblock %}

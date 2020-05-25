@@ -1,0 +1,183 @@
+@font-face {
+    font-family: Circe Rounded;
+    src: url("/static/assets/font/CirceRounded-AltBold.woff");
+}
+
+@font-face {
+    font-family: Circe Rounded2;
+    src: url("/static/assets/font/CirceRounded-Regular.woff");
+}
+
+/*.center_wraper{*/
+/*    margin-left: auto ;*/
+/*    margin-right: 5px;*/
+/*}*/
+
+.wrapper {
+    /*white-space: nowrap;*/
+    display: flex;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
+}
+
+.br {
+    min-width: 550px;
+}
+
+.cms {
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-bottom: 0;
+    color: black;
+    font-family: Circe Rounded;
+
+}
+
+a.nav-link:hover {
+    background: #b8e5de;
+}
+
+.nav-link.left {
+    margin-right: 1px;
+}
+
+
+.left_tred {
+    width: 220px;
+    background: #fafafa;
+    height: 93.96vh;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.boxx {
+    width: 100%;
+}
+
+.m_b {
+    margin-bottom: 0;
+    padding-left: 20px;
+    font-family: Circe Rounded2;
+    color: rgba(0, 0, 0, 0.72);
+    font-weight: 600;
+}
+
+.test {
+    border-radius: 10px;
+}
+
+.test:hover {
+    background: #88c78f;
+}
+
+.pade-blok {
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 1px 0 0 #d7d8db, 0 0 0 0px #e3e4e8;
+}
+
+.name_ka {
+    margin: 10px 0px 0px 30px;
+    flex-grow: 1;
+    padding-top: 5px;
+
+    font-family: Circe Rounded;
+}
+
+
+.part {
+    margin: 0px 0px 0px 30px;
+    flex-grow: 1;
+    color: rgba(36, 36, 38, 0.7);
+    font-size:13px ;
+    font-family: Circe Rounded;
+}
+
+
+
+.new_tred {
+    /*background: #0000ff;*/
+    padding: 6px;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.7;
+    cursor: pointer;
+    height: 35px;
+    font-family: Circe Rounded2;
+}
+
+
+.new_tred:hover {
+    background: #b8e5de;
+}
+
+.name_k {
+    width: 380px;
+    height: 93.96vh;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.fon {
+    padding-top: 7px;
+    background-color: rgba(215, 216, 219, 0.34);
+    margin-bottom: 0px;
+    height: 50px;
+}
+
+.traid_text {
+    height: 88px;
+    margin: 0px 5px 0px 30px;
+    flex-grow: 1;
+    padding-top: 5px;
+    font-size: 15px;
+
+    font-family: Circe Rounded;
+}
+
+
+.traid {
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.traid:hover {
+    background: #b8e5de;
+
+}
+
+.test44 {
+    padding: 14px 20px 14px 0;
+}
+
+.size {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    /*padding: 5px; !* Поля *!*/
+    text-overflow: ellipsis; /* Многоточие */
+}
+
+.main__item {
+    background: orange;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.center_wraper {
+
+     width: 100%;
+    display: flex;
+
+}
+
+.page_block_header {
+    display: block;
+    background: #fafbfc;
+    padding: 0 20px;
+    height: 54px;
+    line-height: 54px;
+    border-bottom: 1px solid #e7e8ec;
+    border-radius: 4px 4px 0 0;
+    font-size: 16px;
+    outline: none;
+    color: #000;
+}

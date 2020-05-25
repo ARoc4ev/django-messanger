@@ -1,0 +1,20 @@
+.team_blok {
+    box-shadow: 0px 1px 0 0 #d7d8db, 0 0 0 0px #e3e4e8;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 1px;
+
+
+}
+
+.team_blok:hover {
+    background: rgba(43, 42, 42, 0.09);
+}
+.hide{
+    display: none;
+}
+
+.teams{
+    height: 300px;
+    overflow: auto;
+}
