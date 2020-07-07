@@ -45,7 +45,7 @@ a.nav-link:hover {
 .left_tred {
     width: 220px;
     background: #fafafa;
-    height: 93.96vh;
+    /*height: 93.96vh;*/
     border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 

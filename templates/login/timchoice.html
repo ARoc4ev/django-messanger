@@ -1,5 +1,11 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% block header %}
+
+   <div align="" class=" cms container" ><p style="font-size: 20px ; padding-top: 5px; margin-bottom: 5px; padding-left: 100px"> Корпоративный мессенджер</p></div>
+
+{% endblock %}
+
 {% block main %}
 
     <div class="container-xl">
@@ -50,7 +56,7 @@
         <div class="page_block_header"><p class="cms">Присоеденится</p></div>
         <div align="center">
             <div style=" ">
-                <form method="post">
+                <form method="post" action="{% url "Invitations" %}">
                     {% csrf_token %}
                     <div style="display: flex; padding: 20px;">
                         <div style="padding-left: 30px;"><p class="cms" style="margin-bottom: 0">id  команды</p></div>

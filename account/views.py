@@ -17,7 +17,7 @@ class Login(View):
             args = {}
             args.update(csrf(request))
 
-        return render(request, 'login/login.html', args)
+        return render(request, 'login/Login2.0.html', args)
 
     def post(self, request):
         if request.user.is_authenticated:
@@ -29,11 +29,13 @@ class Login(View):
             auth.login(request, user)
             team = user.team_set.all()
             if team[0]:
-                return render(request, 'main/main.html', {'name': user.first_name})
+                return redirect('/')
+                # return render(request, 'main/main.html', {'name': user.first_name})
 
 
             else:
-                return render(request, 'login/timchoice.html', {'name': user.first_name})
+                return redirect('/')
+                # return render(request, 'login/timchoice.html', {'name': user.first_name})
 
 
 
@@ -41,7 +43,7 @@ class Login(View):
             args = {}
             args['login_error'] = 'Пользователь не найден'
             args.update(csrf(request))
-            return render(request, 'login/login.html', args)
+            return render(request, 'login/login.2.html', args)
 
     def logout(request):
         auth.logout(request)
@@ -59,7 +61,7 @@ class Register(View):
             newuser = auth.authenticate(username=request.POST.get('email', ''),
                                         password=request.POST.get('password', ''))
 
-            return render(request, "main/main.html")
+            return render(request, "main/im-chat.html.html")
         else:
             args = {}
             args.update()
@@ -67,7 +69,7 @@ class Register(View):
             args['form'] = newuser
             args.update(csrf(request))
 
-            return render(request, 'login/login.html', args)
+            return render(request, 'login/login.2.html', args)
 
 
 class Register2(View):
@@ -82,7 +84,7 @@ class Register2(View):
             try:
                 user = Account.objects.get(email=request.POST.get('email'))
                 args['erroremail'] = 'Пользователь сданым Emal уже зарегистрирован  '
-                return render(request, 'login/login.html', args)
+                return render(request, 'login/login.2.html', args)
             except Account.DoesNotExist:
                 args['email'] = request.POST.get('email')
 
@@ -100,7 +102,7 @@ class Register2(View):
                         args['error'] = newuser.error_class
                         return render(request, "login/register.html", args)
                 else:
-                    return render(request, 'login/register.html', args)
+                    return render(request, 'login/register2.0.html', args)
 
 
 
@@ -110,7 +112,7 @@ class Register2(View):
 
 
 class Base(View):
-    def get(self, request ):
+    def get(self, request):
         if request.user.is_authenticated:
             user = Account.objects.get(id=request.user.id)
             try:

@@ -13,7 +13,7 @@ urlpatterns = [
     re_path(r'^tm/$', views.TeamList.as_view()),
     re_path(r'^team/$', views.TeamR.as_view()),
     re_path(r'^newteam/$', views.CreateTeam.as_view(), name='newteam'),
-    re_path(r'^in/$', views.Invitations.as_view(), name='newteam'),
+    re_path(r'^in/$', views.Invitations.as_view(), name='Invitations'),
     re_path(r'^int/$', views.Inteam.as_view(), name='inteam'),
 
 

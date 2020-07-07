@@ -59,7 +59,7 @@ class TeamR(View):
         for i in team_p:
             i.name = i.fio
 
-        return render(request, 'main/team.html', args)
+        return render(request, 'main/team-im.html', args)
 
 
 class Main(View):
@@ -91,6 +91,7 @@ class Main(View):
                 args['name_channel'] = channels.name
                 args['channel'] = channel
                 args['name'] = user.last_name
+                args['first_name'] = user.first_name
                 args['user_id'] = user.id
 
                 if 'id_traid' in data:  # собщния в чате
@@ -106,7 +107,7 @@ class Main(View):
 
                     return render(request, 'main/chat.html', args)
 
-                return render(request, 'main/main.html', args)
+                return render(request, 'main/im-chat.html', args)
 
         else:
 
@@ -160,7 +161,7 @@ class Im(View):  # личные сообщения
                 args['sms'] = sms
                 return render(request, 'main/chat2.html', args)
 
-        return render(request, 'main/im.html', args)
+        return render(request, 'main/nochat.html', args)
 
 
 class Ims(View):

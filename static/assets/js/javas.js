@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 function sendAjaxForm(csrftoken) {
     $.ajax({
-        url: 'http://127.0.0.1:8000/ch/', //url страницы (action_ajax_form.php)
+        url: 'http://127.0.0.1:8000/ch/',
         type: "POST", //метод отправки
         dataType: "html", //форbtnмат данных
         data: {
@@ -118,7 +118,7 @@ function sendAjaxForm2(csrftoken) {
 
         success: function (response) { //Данные отправлены успешно
             result = $.parseJSON(response);
-            $('#restread').html('<a href="/u/1/'+result.channel_id + '/'+ result.id + '/" style="color: black">'+
+            $('#restread').html('<a href="/u/1/'+result.channel_id + '/'+ result.tread_id + '/" style="color: black">'+
                     '<div class="traid">'+
                         '<div class="traid_text">'+
                             '<div class="test44"><p style="margin-bottom: 0">'+ result.tread_name + '</p>'+

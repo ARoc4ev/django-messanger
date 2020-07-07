@@ -11,13 +11,13 @@ class Team(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=120)
     participants = models.ManyToManyField(Account)
-    invitation = models.ManyToManyField(Invitation)
+    invitation = models.ManyToManyField(Invitation,  blank=True)
 
 
 class Lider(models.Model):
     id = models.AutoField(primary_key=True)
     lider = models.OneToOneField(Account, on_delete=models.CASCADE)
-    team = models.OneToOneField(Team, on_delete=models.CASCADE)
+    team = models.OneToOneField(Team, on_delete=models.CASCADE, )
 
 
 class Groups(models.Model):
